@@ -12,7 +12,7 @@ public class CameraMovement : MonoBehaviour
     private float mouseX;
     private float mouseY;
 
-    void Update()
+    void LateUpdate()
     {
         if (Input.GetMouseButton(1))
         {

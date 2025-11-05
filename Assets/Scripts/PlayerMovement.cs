@@ -8,6 +8,8 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement Instance {get; private set;}
+    
     [SerializeField] private CharacterController conroller;
     [SerializeField] private Transform cam;
 
@@ -29,6 +31,11 @@ public class PlayerMovement : MonoBehaviour
     
     float turnSmoothVelocity;
     private float nextIncreaseCooldown = 0;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Update()
     {
@@ -60,11 +67,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetMouseButton(0) && Time.time >= nextIncreaseCooldown)
         {
-            jumpHeight += 0.005f;
-            jumpHeight = Mathf.Clamp(jumpHeight, 0.001f, 50f);
-            nextIncreaseCooldown = Time.time + IncreaseCooldown;
-            print("Jump power increased: "  + jumpHeight.ToString("F2"));
-            
             
         }
 
@@ -80,6 +82,14 @@ public class PlayerMovement : MonoBehaviour
         
         conroller.Move(velocity * Time.deltaTime);
         
+    }
+
+    public void IncreaseJumpPower()
+    {
+        jumpHeight += 0.005f;
+        jumpHeight = Mathf.Clamp(jumpHeight, 0.001f, 50f);
+        nextIncreaseCooldown = Time.time + IncreaseCooldown;
+        print("Jump power increased: "  + jumpHeight.ToString("F2"));
     }
 
    

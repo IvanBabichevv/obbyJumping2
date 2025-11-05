@@ -21,12 +21,31 @@ public class VictoryPointsCounter : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player collided");
-            VictoryPoints++;
-            UpdateUI();
+            AddPoints(1);
         }
     }
+
+    public void AddPoints(int mount)
+    {
+        VictoryPoints += mount;
+        UpdateUI();
+    }
+
+    public bool HasEnoughPoints(int mount)
+    {
+        return VictoryPoints >= mount;
+    }
+
+    public void SpendPoints(int mount)
+    {
+        VictoryPoints -= mount;
+        if(VictoryPoints < 0) VictoryPoints = 0;
+        UpdateUI();
+    }
+    
     private void UpdateUI()
     {
+        if(VictoryPointsCounterText != null)
         VictoryPointsCounterText.text = $"{baseText_1} {VictoryPoints}";
     }
 }
