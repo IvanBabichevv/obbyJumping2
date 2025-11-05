@@ -9,10 +9,6 @@ public class ShopManager : MonoBehaviour
     public GameObject shopSlotPrefab;
     public Transform contentParent;
     
-    
-
-   
-
     void Start()
     {
         if (PointsManager.Instance == null)
@@ -39,10 +35,10 @@ public class ShopManager : MonoBehaviour
 
     public void TryBuyItem(ShopItem item)
     {
-        if (PointsManager.Instance.HasEnoughPoints(item.price))
+        if (PointsManager.Instance.HasEnoughPoints(item.Price))
         {
-            PointsManager.Instance.SpendPoints(item.price);
-            Debug.Log($"Куплен предмет: {item.itemName}. Осталось очков: {PointsManager.Instance.VictoryPoints}");
+            PointsManager.Instance.SpendPoints(item.Price);
+            Debug.Log($"Куплен предмет: {item.ItemName}. Осталось очков: {PointsManager.Instance.VictoryPoints}");
         }
         else
         {

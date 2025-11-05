@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class ShopItem : MonoBehaviour
+[CreateAssetMenu(fileName = "New Shop Item", menuName = "Shop Item")]
+public class ShopItem : ScriptableObject
 {
-    public string itemName;
-    public Sprite icon;
-    public string description;
-    public int price;
+    public string ItemName;
+    public Sprite Icon;
+    public string Description;
+    public int Price;
 }

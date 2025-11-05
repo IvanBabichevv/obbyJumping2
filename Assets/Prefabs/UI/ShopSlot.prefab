@@ -254,6 +254,8 @@ MonoBehaviour:
   descriptiontext: {fileID: 118459356352238453}
   priceText: {fileID: 3934021332540800106}
   buyButton: {fileID: 3319854953043632012}
+  lockedColor: {r: 0.9811321, g: 0.29156283, b: 0.33482993, a: 1}
+  unlockedColor: {r: 0.54273945, g: 1, b: 0.4198113, a: 1}
 --- !u!1 &2712782885399850812
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,8 @@ using UnityEngine;
 public class PointsManager : MonoBehaviour
 {
     public static event Action OnScoreChanged;
-    
+    public static event Action OnVictoryPointsChanged;
+
     public static PointsManager Instance;
     public int VictoryPoints => victoryPoints;
     [SerializeField] private TMP_Text VictoryPointsCounterText;
@@ -17,7 +18,7 @@ public class PointsManager : MonoBehaviour
 
     private string scoreBaseText;
     private string victoryScoreBaseText;
-    
+
 
     private void OnEnable()
     {
@@ -33,10 +34,10 @@ public class PointsManager : MonoBehaviour
     {
         Instance = this;
     }
-    
+
     private void Start()
     {
-        victoryScoreBaseText = VictoryPointsCounterText.text; 
+        victoryScoreBaseText = VictoryPointsCounterText.text;
         scoreBaseText = scoreText.text;
         UpdateUI();
     }
@@ -63,12 +64,14 @@ public class PointsManager : MonoBehaviour
     {
         OnScoreChanged?.Invoke();
     }
-    
+
     private void UpdateUI()
     {
         if (VictoryPointsCounterText != null)
             VictoryPointsCounterText.text = victoryScoreBaseText + $" {victoryPoints}";
-        
+
         scoreText.text = scoreBaseText + player.GetJumpPower().ToString("F2");
+        
+        OnVictoryPointsChanged?.Invoke();
     }
 }
