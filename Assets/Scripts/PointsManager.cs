@@ -1,18 +1,74 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PointsManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static event Action OnScoreChanged;
+    
+    public static PointsManager Instance;
+    public int VictoryPoints => victoryPoints;
+    [SerializeField] private TMP_Text VictoryPointsCounterText;
+    [SerializeField] private PlayerMovement player;
+    [SerializeField] private TMP_Text scoreText;
+    [SerializeField] private int victoryPoints;
+
+    private string scoreBaseText;
+    private string victoryScoreBaseText;
+    
+
+    private void OnEnable()
     {
-        
+        OnScoreChanged += UpdateUI;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
+        OnScoreChanged -= UpdateUI;
+    }
+
+    void Awake()
+    {
+        Instance = this;
+    }
+    
+    private void Start()
+    {
+        victoryScoreBaseText = VictoryPointsCounterText.text; 
+        scoreBaseText = scoreText.text;
+        UpdateUI();
+    }
+
+    public void AddPoints(int mount)
+    {
+        victoryPoints += mount;
+        UpdateUI();
+    }
+
+    public bool HasEnoughPoints(int mount)
+    {
+        return victoryPoints >= mount;
+    }
+
+    public void SpendPoints(int mount)
+    {
+        victoryPoints -= mount;
+        if (victoryPoints < 0) victoryPoints = 0;
+        UpdateUI();
+    }
+
+    public void ScoreChangedInvoke()
+    {
+        OnScoreChanged?.Invoke();
+    }
+    
+    private void UpdateUI()
+    {
+        if (VictoryPointsCounterText != null)
+            VictoryPointsCounterText.text = victoryScoreBaseText + $" {victoryPoints}";
         
+        scoreText.text = scoreBaseText + player.GetJumpPower().ToString("F2");
     }
 }

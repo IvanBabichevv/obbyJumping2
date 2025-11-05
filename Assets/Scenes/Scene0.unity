@@ -643,6 +643,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121344767}
   m_CullTransparentMesh: 1
+--- !u!114 &138945290 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4340816979866171055, guid: dd833e0ea894f4a7db6c963d7118e8a5, type: 3}
+  m_PrefabInstance: {fileID: 423609716}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &163074309
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,6 +1141,7 @@ GameObject:
   - component: {fileID: 380303560}
   - component: {fileID: 380303562}
   - component: {fileID: 380303561}
+  - component: {fileID: 380303563}
   m_Layer: 5
   m_Name: TouchController
   m_TagString: Untagged
@@ -1194,6 +1206,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380303559}
   m_CullTransparentMesh: 1
+--- !u!114 &380303563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380303559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15edad0b5dc944322bf05530ea4f49c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &423609716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1202,6 +1226,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 362320682}
     m_Modifications:
+    - target: {fileID: -6773930338109624360, guid: dd833e0ea894f4a7db6c963d7118e8a5, type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 138945290}
+    - target: {fileID: -6773930338109624360, guid: dd833e0ea894f4a7db6c963d7118e8a5, type: 3}
+      propertyPath: nameText
+      value: 
+      objectReference: {fileID: 1677648544}
     - target: {fileID: 2620939071248199486, guid: dd833e0ea894f4a7db6c963d7118e8a5, type: 3}
       propertyPath: m_Name
       value: ShopSlot
@@ -3408,6 +3440,7 @@ GameObject:
   - component: {fileID: 1619124438}
   - component: {fileID: 1619124437}
   - component: {fileID: 1619124436}
+  - component: {fileID: 1619124440}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3499,6 +3532,33 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1619124440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619124435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902c1d12294274d5383ef37807c18ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VictoryPointsCounterText: {fileID: 364749842}
+  player: {fileID: 2021448660}
+  scoreText: {fileID: 163074312}
+  victoryPoints: 0
+--- !u!114 &1677648544 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3841253361644147376, guid: dd833e0ea894f4a7db6c963d7118e8a5, type: 3}
+  m_PrefabInstance: {fileID: 423609716}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1692466227
 GameObject:
   m_ObjectHideFlags: 0
@@ -3615,6 +3675,7 @@ GameObject:
   - component: {fileID: 1727541965}
   - component: {fileID: 1727541967}
   - component: {fileID: 1727541966}
+  - component: {fileID: 1727541968}
   m_Layer: 5
   m_Name: ShopWindow
   m_TagString: Untagged
@@ -3681,6 +3742,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727541964}
   m_CullTransparentMesh: 1
+--- !u!114 &1727541968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727541964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b916674ec4714f5f8a689d9ecb894d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemsForSale: []
+  shopSlotPrefab: {fileID: 2620939071248199486, guid: dd833e0ea894f4a7db6c963d7118e8a5, type: 3}
+  contentParent: {fileID: 362320682}
 --- !u!1 &1810049503
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,13 +8,14 @@ public class ShopManager : MonoBehaviour
     public List<ShopItem> itemsForSale = new List<ShopItem>();
     public GameObject shopSlotPrefab;
     public Transform contentParent;
+    
+    
 
-    private VictoryPointsCounter victoryPoints;
+   
 
     void Start()
     {
-        victoryPoints = FindObjectOfType<VictoryPointsCounter>();
-        if (victoryPoints == null)
+        if (PointsManager.Instance == null)
         {
             Debug.LogError("VictoryPointsCounter не найден на сцене");
             return;
@@ -38,10 +39,10 @@ public class ShopManager : MonoBehaviour
 
     public void TryBuyItem(ShopItem item)
     {
-        if (victoryPoints.HasEnoughPoints(item.price))
+        if (PointsManager.Instance.HasEnoughPoints(item.price))
         {
-            victoryPoints.SpendPoints(item.price);
-            Debug.Log($"Куплен предмет: {item.itemName}. Осталось очков: {victoryPoints.VictoryPoints}");
+            PointsManager.Instance.SpendPoints(item.price);
+            Debug.Log($"Куплен предмет: {item.itemName}. Осталось очков: {PointsManager.Instance.VictoryPoints}");
         }
         else
         {
