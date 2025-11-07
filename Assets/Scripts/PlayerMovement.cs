@@ -86,11 +86,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void IncreaseJumpPower()
     {
-        jumpHeight += 0.005f;
+        jumpHeight += 0.005f * PointsManager.Instance.CurrentCoefficient;
+        print(0.005f * PointsManager.Instance.CurrentCoefficient);
         jumpHeight = Mathf.Clamp(jumpHeight, 0.001f, 50f);
         nextIncreaseCooldown = Time.time + IncreaseCooldown;
         PointsManager.Instance.ScoreChangedInvoke();
-        print("Jump power increased: "  + jumpHeight.ToString("F2"));
+        //print("Jump power increased: "  + jumpHeight.ToString("F2"));
     }
 
    

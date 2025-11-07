@@ -9,4 +9,6 @@ public class ShopItem : ScriptableObject
     public Sprite Icon;
     public string Description;
     public int Price;
+    
+    public PetItem PetItem;
 }

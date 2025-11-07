@@ -39,7 +39,7 @@ public class ShopSlot : MonoBehaviour
         shopManager = manager;
 
         icon.sprite = item.Icon;
-        nameText.text = item.name;
+        nameText.text = item.PetItem.PetName;
         descriptiontext.text = item.Description;
         priceText.text = item.Price.ToString();
 

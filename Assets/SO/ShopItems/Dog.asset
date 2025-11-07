@@ -16,3 +16,4 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 7c6e8544f2f1c427dbfd5971a8c39578, type: 3}
   Description: This item can help you buy others cool items
   Price: 10
+  PetItem: {fileID: 11400000, guid: 06435852b9fc74bbaa1e3945ccfb8bd3, type: 2}

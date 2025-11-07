@@ -10,6 +10,8 @@ public class PointsManager : MonoBehaviour
     public static event Action OnVictoryPointsChanged;
 
     public static PointsManager Instance;
+    public float CurrentCoefficient => currentCoefficient;
+
     public int VictoryPoints => victoryPoints;
     [SerializeField] private TMP_Text VictoryPointsCounterText;
     [SerializeField] private PlayerMovement player;
@@ -19,6 +21,7 @@ public class PointsManager : MonoBehaviour
     private string scoreBaseText;
     private string victoryScoreBaseText;
 
+    private float currentCoefficient = 1;
 
     private void OnEnable()
     {
@@ -65,13 +68,24 @@ public class PointsManager : MonoBehaviour
         OnScoreChanged?.Invoke();
     }
 
+    public void IncreaseCoefficient(float coefficient)
+    {
+        currentCoefficient *= coefficient;
+    }
+
+    public void DecreaseCoefficient(float coefficient)
+    {
+        currentCoefficient /= coefficient;
+        if (currentCoefficient < 1) currentCoefficient = 1;
+    }
+
     private void UpdateUI()
     {
         if (VictoryPointsCounterText != null)
             VictoryPointsCounterText.text = victoryScoreBaseText + $" {victoryPoints}";
 
         scoreText.text = scoreBaseText + player.GetJumpPower().ToString("F2");
-        
+
         OnVictoryPointsChanged?.Invoke();
     }
 }
