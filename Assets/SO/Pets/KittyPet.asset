@@ -16,4 +16,4 @@ MonoBehaviour:
   Icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   isEquipped: 1
   coefficient: 5
-  petPrefab: {fileID: 0}
+  petPrefab: {fileID: 1781751594537074, guid: 73fd061647b4471cbe327da536f6e022, type: 3}

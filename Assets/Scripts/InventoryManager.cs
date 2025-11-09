@@ -86,6 +86,8 @@ public class InventoryManager : MonoBehaviour
 
                 Debug.Log($"{slot.currentItem.PetName} экипирован в {holder.name}");
                 Destroy(slot.gameObject);
+                
+                PetSpawner.Instance.SpawnPet(slot.currentItem);
                 return;
             }
         }
@@ -98,6 +100,8 @@ public class InventoryManager : MonoBehaviour
         activeSlot.SetItem(null);
         activeSlot.SetBusy(false);
         AddItem(petItem, true);
+        
+        PetSpawner.Instance.DespawnPet(petItem);
     }
     
 }
