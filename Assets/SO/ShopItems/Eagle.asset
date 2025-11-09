@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91ac9faabcf349fdb53cd60aaa96a30, type: 3}
+  m_Name: Eagle
+  m_EditorClassIdentifier: 
+  ItemName: Eagle
+  Icon: {fileID: 21300000, guid: d88504a88cd414fe2b4a7f3e97b6096b, type: 3}
+  Description: This item can help you buy others cool items
+  Price: 11
+  PetItem: {fileID: 11400000, guid: a977b5f1718454e1bb0125271a163e95, type: 2}

@@ -1856,7 +1856,7 @@ GameObject:
   - component: {fileID: 539141860}
   - component: {fileID: 539141859}
   m_Layer: 6
-  m_Name: FollowTarget
+  m_Name: FollowTargetCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3723,6 +3723,52 @@ Transform:
   - {fileID: 1892267557}
   m_Father: {fileID: 2021448659}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1329920698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1329920699}
+  - component: {fileID: 1329920700}
+  m_Layer: 6
+  m_Name: PetFollowTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1329920699
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329920698}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1536974253}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1329920700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329920698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0c366fb3d71645b0abd60c9812cff43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2021448659}
+  spawnRadius: 2
 --- !u!1 &1367633794
 GameObject:
   m_ObjectHideFlags: 0
@@ -4068,6 +4114,7 @@ Transform:
   - {fileID: 963194228}
   - {fileID: 48757219}
   - {fileID: 539141858}
+  - {fileID: 1329920699}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1546286276
@@ -4715,6 +4762,16 @@ MonoBehaviour:
   itemsForSale:
   - {fileID: 11400000, guid: a37e9555c5fbf4d2fbe73f9e04b79943, type: 2}
   - {fileID: 11400000, guid: 1ecaaf6b6f5ee499ba5c5eddc7509600, type: 2}
+  - {fileID: 11400000, guid: 5dcbc396e9f4849dc951df606aecf952, type: 2}
+  - {fileID: 11400000, guid: 7459a1f2f106043f8a34fa805712b774, type: 2}
+  - {fileID: 11400000, guid: 02103d59718df443c9632dedc35d05bd, type: 2}
+  - {fileID: 11400000, guid: 16475059e9bce4beaab7f2000418283e, type: 2}
+  - {fileID: 11400000, guid: c18dfdabea182472abecbce1f44965fa, type: 2}
+  - {fileID: 11400000, guid: e1c611f14bb034325b0ba8ba2e8f61eb, type: 2}
+  - {fileID: 11400000, guid: 6169a104c91504a0abe21c9a2304e649, type: 2}
+  - {fileID: 11400000, guid: a3d85de734f1846aeb51a2b4c003ea51, type: 2}
+  - {fileID: 11400000, guid: 376109cbf55334d86913856c1b998d47, type: 2}
+  - {fileID: 11400000, guid: 5e8fea8ea4828481b884901d81f4d8a0, type: 2}
   shopSlotPrefab: {fileID: 2620939071248199486, guid: dd833e0ea894f4a7db6c963d7118e8a5, type: 3}
   contentParent: {fileID: 362320682}
 --- !u!1 &1810049503

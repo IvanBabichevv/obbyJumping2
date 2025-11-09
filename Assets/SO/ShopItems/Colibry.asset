@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c91ac9faabcf349fdb53cd60aaa96a30, type: 3}
-  m_Name: Dog
+  m_Name: Colibry
   m_EditorClassIdentifier: 
-  ItemName: Doggg
-  Icon: {fileID: 21300000, guid: 7c6e8544f2f1c427dbfd5971a8c39578, type: 3}
+  ItemName: Colibry
+  Icon: {fileID: 21300000, guid: 13d7de116bc4c4797b571b40067aba73, type: 3}
   Description: This item can help you buy others cool items
-  Price: 10
-  PetItem: {fileID: 11400000, guid: 06435852b9fc74bbaa1e3945ccfb8bd3, type: 2}
+  Price: 9
+  PetItem: {fileID: 11400000, guid: 0c38cff7df55f4c75883ae88c57a9f33, type: 2}

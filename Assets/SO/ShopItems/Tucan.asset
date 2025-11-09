@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c91ac9faabcf349fdb53cd60aaa96a30, type: 3}
-  m_Name: Cat
+  m_Name: Tucan
   m_EditorClassIdentifier: 
-  ItemName: Kitty
-  Icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  ItemName: Tucan
+  Icon: {fileID: 21300000, guid: def58ae05bcef4cea877da404dbf653e, type: 3}
   Description: This item can help you buy others cool items
-  Price: 15
-  PetItem: {fileID: 11400000, guid: ba48abe38b58f4f20a5b2a8de037f52a, type: 2}
+  Price: 17
+  PetItem: {fileID: 11400000, guid: c4130acd22baf4a9486293e44b72e6a2, type: 2}

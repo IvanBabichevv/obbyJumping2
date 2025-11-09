@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91ac9faabcf349fdb53cd60aaa96a30, type: 3}
+  m_Name: Papagei
+  m_EditorClassIdentifier: 
+  ItemName: Papagei
+  Icon: {fileID: 21300000, guid: 91f9e93f92c3f4a51a9fe96f5596aeea, type: 3}
+  Description: This item can help you buy others cool items
+  Price: 13
+  PetItem: {fileID: 11400000, guid: f8e1864e01ebc4de39c3cfde8e7e8cd8, type: 2}
