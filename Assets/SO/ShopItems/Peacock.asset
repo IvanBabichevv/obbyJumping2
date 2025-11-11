@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Peacock
   m_EditorClassIdentifier: 
   ItemName: Peacock
-  Icon: {fileID: 21300000, guid: ab81950a55f274f1caef2888bc89a9ba, type: 3}
+  Icon: {fileID: 21300000, guid: 929a555cf614b40a6aadf19aa50e1da9, type: 3}
   Description: This item can help you buy others cool items
   Price: 14
   PetItem: {fileID: 11400000, guid: 8d487d386cf464f499e9eb08b305a4ec, type: 2}

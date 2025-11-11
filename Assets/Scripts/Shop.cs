@@ -8,31 +8,25 @@ using TMPro;
 public class Shop : MonoBehaviour
 {
     [SerializeField] private GameObject shopWindow;
-    [SerializeField] private Button closeButton;
-    //private bool isOpen =  false;
+    private bool isOpen =  false;
 
-    void Start()
+    private void Start()
     {
-        shopWindow.SetActive(false);
-        closeButton.onClick.AddListener(CloseShop);
+        if (shopWindow != null)
+            shopWindow.SetActive(false);
     }
-
+    public void ToggleShop()
+    {
+        isOpen = !isOpen;
+        shopWindow.SetActive(isOpen);
+    }
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            OpenShop();
+            shopWindow.SetActive(true);
         }
-    }
-    private void OpenShop()
-    {
-        shopWindow.SetActive(true);
-        //isOpen = true;
-    }
-
-    private void CloseShop()
-    {
-        shopWindow.SetActive(false);
-        //isOpen = false;
+        
     }
 }
