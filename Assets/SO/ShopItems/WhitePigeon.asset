@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: WhitePigeon
   Icon: {fileID: 21300000, guid: 9f87e12225ace451e959d8372e705704, type: 3}
-  Description: This item can help you buy others cool items
-  Price: 17
+  Description: 6
+  Price: 500
   PetItem: {fileID: 11400000, guid: 8ad67f41b240241b195166be452c4ee3, type: 2}

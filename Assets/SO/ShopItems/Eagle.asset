@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Eagle
   Icon: {fileID: 21300000, guid: d88504a88cd414fe2b4a7f3e97b6096b, type: 3}
-  Description: This item can help you buy others cool items
-  Price: 11
+  Description: 3
+  Price: 70
   PetItem: {fileID: 11400000, guid: a977b5f1718454e1bb0125271a163e95, type: 2}

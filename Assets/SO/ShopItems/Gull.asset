@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Gull
   Icon: {fileID: 21300000, guid: 2b1c07f2437074d668e6754331c577fb, type: 3}
-  Description: This item can help you buy others cool items
-  Price: 12
+  Description: 3.4
+  Price: 85
   PetItem: {fileID: 11400000, guid: 909f899dd1eaa4b5297c0ca65d4555ee, type: 2}

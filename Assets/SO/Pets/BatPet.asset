@@ -15,5 +15,5 @@ MonoBehaviour:
   PetName: Bat
   Icon: {fileID: 21300000, guid: 76654cd9be9204d53a5e3bd830e3dc6c, type: 3}
   isEquipped: 1
-  coefficient: 2
+  coefficient: 1.8
   petPrefab: {fileID: 1534757833402324, guid: 6bf44e5767e241edb1781e7ed23597eb, type: 3}

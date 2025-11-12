@@ -15,5 +15,5 @@ MonoBehaviour:
   PetName: Cock
   Icon: {fileID: 21300000, guid: 0122d9d0fc041493e9c5f1d8e6acdfe8, type: 3}
   isEquipped: 1
-  coefficient: 5
+  coefficient: 2
   petPrefab: {fileID: 1169202092413468, guid: 874115f2e3194f27b2c37b5e21690125, type: 3}

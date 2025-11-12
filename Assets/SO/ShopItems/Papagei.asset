@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Papagei
   Icon: {fileID: 21300000, guid: 91f9e93f92c3f4a51a9fe96f5596aeea, type: 3}
-  Description: This item can help you buy others cool items
-  Price: 13
+  Description: 3.8
+  Price: 100
   PetItem: {fileID: 11400000, guid: f8e1864e01ebc4de39c3cfde8e7e8cd8, type: 2}
