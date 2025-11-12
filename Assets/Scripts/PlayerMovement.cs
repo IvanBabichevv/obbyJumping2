@@ -23,8 +23,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float IncreaseCooldown = 0.1f;
 
     [SerializeField] private Animator animator;  
+    [SerializeField] private float oneClick = 1/200f;
 
-    public float GetJumpPower() => jumpHeight;
+    public int GetJumpPower() => (int)(jumpHeight * 200);
 
     Vector3 velocity;
     bool isGrounded;
@@ -50,7 +51,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        //isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        isGrounded = conroller.isGrounded;
 
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
@@ -67,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            conroller.Move(moveDir.normalized * speed * Time.deltaTime);
+            conroller.Move(moveDir.normalized * (speed * Time.deltaTime));
         }
 
         if (Input.GetButtonDown("Jump") && isGrounded)
@@ -107,9 +109,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void IncreaseJumpPower()
     {
-        jumpHeight += 0.005f * PointsManager.Instance.CurrentCoefficient;
-        print(0.005f * PointsManager.Instance.CurrentCoefficient);
-        jumpHeight = Mathf.Clamp(jumpHeight, 0.001f, 50f);
+        //jumpHeight += 0.005f * PointsManager.Instance.CurrentCoefficient;
+        jumpHeight += oneClick * PointsManager.Instance.CurrentCoefficient;
+        //print(0.005f * PointsManager.Instance.CurrentCoefficient);
+        //jumpHeight = Mathf.Clamp(jumpHeight, 0.001f, 50f);
         nextIncreaseCooldown = Time.time + IncreaseCooldown;
         PointsManager.Instance.ScoreChangedInvoke();
     }

@@ -84,7 +84,7 @@ public class PointsManager : MonoBehaviour
         if (VictoryPointsCounterText != null)
             VictoryPointsCounterText.text = victoryScoreBaseText + $" {victoryPoints}";
 
-        scoreText.text = scoreBaseText + player.GetJumpPower().ToString("F2");
+        scoreText.text = scoreBaseText + player.GetJumpPower();
 
         OnVictoryPointsChanged?.Invoke();
     }
