@@ -10,5 +10,6 @@ public class TouchController : MonoBehaviour, IPointerClickHandler
     {
         PlayerMovement.Instance.IncreaseJumpPower();
         Debug.Log("OnPointerClick");
+        SoundManager.instance.PlayButtonClick();
     }
 }

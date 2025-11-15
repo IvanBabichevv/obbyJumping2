@@ -15,5 +15,5 @@ MonoBehaviour:
   PetName: Eagle
   Icon: {fileID: 21300000, guid: d88504a88cd414fe2b4a7f3e97b6096b, type: 3}
   isEquipped: 1
-  coefficient: 3
+  coefficient: 4.5
   petPrefab: {fileID: 1021362880937804, guid: 9cd957dc8b96443bbec818d8bd309e26, type: 3}

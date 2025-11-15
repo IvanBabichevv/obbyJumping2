@@ -25,6 +25,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator animator;  
     [SerializeField] private float oneClick = 1/200f;
 
+    private float stepCoolDown = 0.4f;
+    private float nextStepTime = 0f;
+    float sens = SettingsManager.Sensivity;
+
     public int GetJumpPower() => (int)(jumpHeight * 200);
 
     Vector3 velocity;
@@ -54,8 +58,8 @@ public class PlayerMovement : MonoBehaviour
         //isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         isGrounded = conroller.isGrounded;
 
-        float x = Input.GetAxisRaw("Horizontal");
-        float z = Input.GetAxisRaw("Vertical");
+        float x = Input.GetAxisRaw("Horizontal") * sens;
+        float z = Input.GetAxisRaw("Vertical") * sens;
 
         Vector3 move = new Vector3(x, 0, z);
 
@@ -102,6 +106,12 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("isMoving", isMoving);
             animator.SetBool("isJumping", !isGrounded); 
+        }
+
+        if (isGrounded && isMoving && Time.time >= nextStepTime)
+        {
+            SoundManager.instance.PlayFootStep();
+            nextStepTime = Time.time + stepCoolDown;
         }
 
         lastPosition = transform.position; 
