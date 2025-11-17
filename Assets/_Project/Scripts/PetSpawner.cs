@@ -43,7 +43,7 @@ public class PetSpawner : MonoBehaviour
         pet.name = $"{petItem.PetName}_Pet";
 
         var follow = pet.AddComponent<PetFollow>();
-        follow.SetTarget(player, randomOffset);
+        follow.SetTarget(player, baseOffset);
         
         activePets.Add(pet);
         petIndex++;

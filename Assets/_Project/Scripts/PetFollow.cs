@@ -21,7 +21,7 @@ public class PetFollow : MonoBehaviour
     {
         if(target == null) return;
         
-        Vector3 targetPos = target.position - target.forward * followDistance;
+        Vector3 targetPos = target.position + (target.forward / 4) * followDistance;
         transform.position = Vector3.Lerp(transform.position, targetPos + offset, Time.deltaTime * moveSpeed);
         Vector3 lookDir = (target.position - transform.position).normalized;
         if (lookDir.magnitude > 0.1f)
