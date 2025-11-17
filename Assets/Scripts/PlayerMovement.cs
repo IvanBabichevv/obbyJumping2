@@ -19,11 +19,14 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundMask;
+    [SerializeField] private LayerMask floorMask;
     [SerializeField] private float groundDistance = 0.4f;
+    [SerializeField] private float floorDistance = 1.5f;
     [SerializeField] private float IncreaseCooldown = 0.1f;
-
-    [SerializeField] private Animator animator;  
+    
     [SerializeField] private float oneClick = 1/200f;
+    
+    private Animator animator;  
 
     private float stepCoolDown = 0.4f;
     private float nextStepTime = 0f;
@@ -96,6 +99,10 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
+        if (Physics.Raycast(transform.position, Vector3.up, out RaycastHit hit, floorDistance, floorMask))
+        {
+            velocity.y = -10f;
+        }
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
@@ -134,5 +141,10 @@ public class PlayerMovement : MonoBehaviour
         //jumpHeight = Mathf.Clamp(jumpHeight, 0.001f, 50f);
         nextIncreaseCooldown = Time.time + IncreaseCooldown;
         PointsManager.Instance.ScoreChangedInvoke();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawRay(transform.position, Vector3.up * floorDistance);
     }
 }
