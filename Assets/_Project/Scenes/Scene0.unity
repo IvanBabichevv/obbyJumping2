@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 1, g: 1, b: 1, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 3802fb8899dc2df428fb805843045a49, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 4d0e0ffc7a6c1bf44b435e0b23260f8c, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1619124442}
+      - m_Target: {fileID: 826373433}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
         m_MethodName: ToggleShop
         m_Mode: 1
@@ -1910,7 +1910,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 60.000004
     OrthographicSize: 5
-    NearClipPlane: 0.3
+    NearClipPlane: 0.01
     FarClipPlane: 3000
     Dutch: 0
     ModeOverride: 0
@@ -7340,7 +7340,6 @@ Transform:
   - {fileID: 198371529}
   - {fileID: 703681531450957645}
   - {fileID: 250277706}
-  - {fileID: 1725222678}
   - {fileID: 1962980020}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18755,7 +18754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 10
   maxYRot: 80
-  minYRot: -80
+  minYRot: -60
 --- !u!114 &539141860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30689,8 +30688,8 @@ Transform:
   m_GameObject: {fileID: 826373432}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.3, y: 1.46, z: -3.1400003}
-  m_LocalScale: {x: 1.4, y: 1.24, z: 1.4}
+  m_LocalPosition: {x: 11.3, y: 1.21, z: -3.1400003}
+  m_LocalScale: {x: 3, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -36685,7 +36684,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 3000
   field of view: 60.000004
   orthographic: 0
@@ -45384,6 +45383,7 @@ GameObject:
   - component: {fileID: 1181086848}
   - component: {fileID: 1181086850}
   - component: {fileID: 1181086849}
+  - component: {fileID: 1181086851}
   m_Layer: 5
   m_Name: VictoryWindow
   m_TagString: Untagged
@@ -45454,6 +45454,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181086847}
   m_CullTransparentMesh: 1
+--- !u!114 &1181086851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181086847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e271db27aa24b9ebd56d51ba2b09a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1184695964 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1309095466835327010, guid: 9d80503f1673399419b149f9ca132a2c, type: 3}
@@ -69379,12 +69391,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725222677}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 211254080}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1725222679
 AudioSource:
@@ -69593,7 +69605,7 @@ MonoBehaviour:
   musicGame: {fileID: 1725222680}
   fxSource: {fileID: 1725222679}
   buttonClick: {fileID: 8300000, guid: 72ee2562b7c4aa0449b4cebbc53ddb4f, type: 3}
-  footStep: {fileID: 8300000, guid: d7c2400906fc1c74b94192550ce64435, type: 3}
+  footStep: {fileID: 8300000, guid: 12a76f6af80fbab478e053ef5fbc5572, type: 3}
   Victory: {fileID: 8300000, guid: 9ae6d7a9d7b015b41bd39223971208a2, type: 3}
   backgroundMusicGame: {fileID: 8300000, guid: faf07ce30728d497ebddcfb5a9bc7320, type: 3}
 --- !u!1 &1726301069
@@ -70269,7 +70281,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1619124442}
+      - m_Target: {fileID: 826373433}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
         m_MethodName: ToggleShop
         m_Mode: 1
@@ -85692,6 +85704,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 211254080}
+  - {fileID: 1725222678}
   - {fileID: 1536974253}
   - {fileID: 1619124439}
   - {fileID: 1871817613}

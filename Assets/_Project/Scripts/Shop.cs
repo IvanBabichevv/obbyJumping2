@@ -25,8 +25,17 @@ public class Shop : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            isOpen = true;
             shopWindow.SetActive(true);
         }
-        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isOpen = false;
+            shopWindow.SetActive(false);
+        }
     }
 }

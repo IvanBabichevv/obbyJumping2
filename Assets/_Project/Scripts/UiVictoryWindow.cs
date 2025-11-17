@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,8 +12,7 @@ public class UiVictoryWindow : MonoBehaviour
     [SerializeField] private GameObject victoryWindow;
     [SerializeField] private TMP_Text pointsText;
     [SerializeField] private Button okButton;
-
-
+    
     private int pointsToAdd;
     private CrownPointTrigger triggerRef;
 
