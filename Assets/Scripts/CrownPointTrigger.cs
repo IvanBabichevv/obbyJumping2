@@ -9,31 +9,36 @@ public class CrownPointTrigger : MonoBehaviour
 {
     public int VictoryPoints = 1;
     [SerializeField] private Vector3 telepotPosition;
+
+    private Collider lastPlayer;
     
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player collided");
-            PointsManager.Instance.AddPoints(VictoryPoints);
-            SoundManager.instance.PlayVictory();
+           lastPlayer =  other;
             
-            CharacterController characterController = other.GetComponent<CharacterController>();
-
-            if (characterController != null)
-            {
-                characterController.enabled = false;
-                
-                other.transform.position = telepotPosition;
-                
-                characterController.enabled = true;
-            }
-            else
-            {
-                other.transform.position = telepotPosition;
-
-            }
+            UiVictoryWindow.instance.Show(VictoryPoints, this);            
         }
     }
+
+    public void TeleportPlayer()
+    {
+        if(lastPlayer == null) return;
+        
+        CharacterController characterController = lastPlayer.GetComponent<CharacterController>();
+
+        if (characterController != null)
+        {
+            characterController.enabled = false;
+            lastPlayer.transform.position = telepotPosition;
+            characterController.enabled = true;
+        }
+        else
+        {
+            lastPlayer.transform.position = telepotPosition;
+        }
+    }
+    
     
 }
