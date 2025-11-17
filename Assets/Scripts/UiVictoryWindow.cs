@@ -11,7 +11,6 @@ public class UiVictoryWindow : MonoBehaviour
     [SerializeField] private GameObject victoryWindow;
     [SerializeField] private TMP_Text pointsText;
     [SerializeField] private Button okButton;
-    [SerializeField] private string text;
 
 
     private int pointsToAdd;
@@ -30,14 +29,14 @@ public class UiVictoryWindow : MonoBehaviour
         triggerRef = trigger;   
         
         victoryWindow.SetActive(true);
-        pointsText.text = $"{text} {pointsToAdd.ToString()}";
+        pointsText.text = $"+{pointsToAdd.ToString()}";
         
+        PointsManager.Instance.AddPoints(pointsToAdd);
         SoundManager.instance.PlayVictory();
     }
 
     private void OnOkPressed()
     {
-        PointsManager.Instance.AddPoints(pointsToAdd);
         triggerRef.TeleportPlayer();
         victoryWindow.SetActive(false);
     }

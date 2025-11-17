@@ -38,8 +38,9 @@ public class PlayerMovement : MonoBehaviour
     private float nextIncreaseCooldown = 0;
 
     private Vector3 lastPosition;
+    private Vector3 startPosition;
     private float moveMinimum = 0.001f; 
-
+    
     private void Awake()
     {
         Instance = this;
@@ -51,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
             animator = GetComponentInChildren<Animator>();
 
         lastPosition = transform.position;
+        startPosition = transform.position;
     }
 
     void Update()
@@ -58,6 +60,13 @@ public class PlayerMovement : MonoBehaviour
         //isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         isGrounded = conroller.isGrounded;
 
+        if (transform.position.y < -2)
+        {
+            conroller.enabled = false;
+            transform.position = startPosition;
+            conroller.enabled = true;
+        }
+        
         float x = Input.GetAxisRaw("Horizontal") * sens;
         float z = Input.GetAxisRaw("Vertical") * sens;
 
