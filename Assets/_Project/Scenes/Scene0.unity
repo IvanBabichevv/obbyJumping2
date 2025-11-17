@@ -18285,7 +18285,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -56.07}
-  m_SizeDelta: {x: 1300, y: 770}
+  m_SizeDelta: {x: 1500, y: 770}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &502667872
 MonoBehaviour:
@@ -24002,7 +24002,7 @@ GameObject:
   - component: {fileID: 679331498}
   - component: {fileID: 679331497}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: CupsBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53915,7 +53915,7 @@ GameObject:
   - component: {fileID: 1367633797}
   - component: {fileID: 1367633796}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: JumpPowerBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67283,10 +67283,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 340259775}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -620.2, y: 0}
-  m_SizeDelta: {x: 1390, y: -394.9741}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 22, y: 0}
+  m_SizeDelta: {x: 0, y: -394.9741}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1660706625
 MonoBehaviour:
@@ -67325,7 +67325,7 @@ MonoBehaviour:
   m_CellSize: {x: 430, y: 150}
   m_Spacing: {x: 30, y: 30}
   m_Constraint: 1
-  m_ConstraintCount: 2
+  m_ConstraintCount: 3
 --- !u!1001 &1661598742
 PrefabInstance:
   m_ObjectHideFlags: 0
