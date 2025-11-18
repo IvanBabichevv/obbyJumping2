@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9154e6e371c4a3b9583c53f8b05dd9, type: 3}
   m_Name: PetEagle
   m_EditorClassIdentifier: 
-  PetName: Eagle
+  petId: 4
+  PetNameRu: "\u041E\u0440\u0435\u043B"
+  PetNameEn: Eagle
+  PetNameTr: Kartal
   Icon: {fileID: 21300000, guid: d88504a88cd414fe2b4a7f3e97b6096b, type: 3}
   isEquipped: 1
   coefficient: 4.5

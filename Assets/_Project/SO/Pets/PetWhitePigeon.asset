@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c9154e6e371c4a3b9583c53f8b05dd9, type: 3}
   m_Name: PetWhitePigeon
   m_EditorClassIdentifier: 
-  PetName: WhitePigeon
+  petId: 11
+  PetNameRu: "\u0411\u0435\u043B\u044B\u0439 \u0433\u043E\u043B\u0443\u0431\u044C"
+  PetNameEn: White Pigeon
+  PetNameTr: "Beyaz G\xFCvercin "
   Icon: {fileID: 21300000, guid: 9f87e12225ace451e959d8372e705704, type: 3}
   isEquipped: 1
   coefficient: 10

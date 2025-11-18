@@ -30,6 +30,7 @@ public class CameraMovement : MonoBehaviour
         {
             if (Input.GetMouseButton(1))
             {
+                mouseSensitivity = SettingsManager.Sensivity;
                 mouseX += Input.GetAxis("Mouse X") * mouseSensitivity;
                 mouseY -= Input.GetAxis("Mouse Y") * mouseSensitivity;
             }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using YG;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -20,17 +21,42 @@ public class InventoryManager : MonoBehaviour
     void OnEnable()
     {
         ShopManager.OnItemBought += AddItem;
+        //YG2.onGetSDKData += InitializeData;
     }
 
     void OnDisable()
     {
         ShopManager.OnItemBought -= AddItem;
+        //YG2.onGetSDKData -= InitializeData;
     }
 
     private void Start()
     {
+        if (YG2.isSDKEnabled)
+            InitializeData();
+
         if (inventoryWindow != null)
             inventoryWindow.SetActive(false);
+    }
+
+    private void InitializeData()
+    {
+        foreach (var petId in YG2.saves.itemInInventorySlotId)
+        {
+            PetItem pet = ListOfItems.Instance.GetPet(petId);
+            UpdateInventoryUI(pet);
+        }
+
+        for (int i = 0; i < YG2.saves.slotsId.Count; i++)
+        {
+            int slotId = YG2.saves.slotsId[i];
+            int petId = YG2.saves.itemInActiveSlotId[i];
+
+            PetItem pet = ListOfItems.Instance.GetPet(petId);
+            activeSlots[slotId].SetItem(pet);
+            activeSlots[slotId].SetBusy(true);
+            PetSpawner.Instance.SpawnPet(pet);
+        }
     }
 
     public void ToggleInventory()
@@ -41,8 +67,6 @@ public class InventoryManager : MonoBehaviour
 
     void AddItem(PetItem PetItem, bool ingoreCopy = false)
     {
-        Debug.Log($"Покупка получена в инвентарь: {PetItem.PetName}");
-
         if (!ingoreCopy)
         {
             // Проверка на дубликаты
@@ -50,23 +74,28 @@ public class InventoryManager : MonoBehaviour
             {
                 if (i == PetItem)
                 {
-                    Debug.Log($"{PetItem.PetName} уже есть в инвентаре");
                     return;
                 }
             }
         }
 
-        items.Add(PetItem);
+        UpdateInventoryUI(PetItem);
+        
+        YG2.saves.itemInInventorySlotId.Add(PetItem.petId);
+
+        YG2.SaveProgress();
+    }
+
+    private void UpdateInventoryUI(PetItem petItem)
+    {
+        items.Add(petItem);
 
         // Создаём слот
         GameObject slotObj = Instantiate(inventorySlotPrefab, contentParent);
         InventorySlot slot = slotObj.GetComponent<InventorySlot>();
-        slot.Setup(PetItem);
-
-        Debug.Log($"В инвентарь добавлен: {PetItem.PetName}");
+        slot.Setup(petItem);
     }
-
-
+    
     public void EquipItem(InventorySlot slot)
     {
         if (slot == null || slot.Icon == null)
@@ -79,15 +108,22 @@ public class InventoryManager : MonoBehaviour
         {
             if (!holder.IsBusy)
             {
+                YG2.saves.itemInActiveSlotId.Add(slot.currentItem.petId);
+                YG2.saves.slotsId.Add(holder.slotId);
+
                 holder.SetItem(slot.currentItem);
                 holder.SetBusy(true);
 
                 slot.currentItem.isEquipped = true;
 
-                Debug.Log($"{slot.currentItem.PetName} экипирован в {holder.name}");
-                Destroy(slot.gameObject);
-                
                 PetSpawner.Instance.SpawnPet(slot.currentItem);
+                
+                YG2.saves.itemInInventorySlotId.Remove(slot.currentItem.petId);
+                
+                Destroy(slot.gameObject);
+
+                YG2.SaveProgress();
+
                 return;
             }
         }
@@ -97,11 +133,15 @@ public class InventoryManager : MonoBehaviour
 
     public void UnequipItem(PetItem petItem, ActiveToolbarSlot activeSlot)
     {
+        YG2.saves.itemInActiveSlotId.Remove(petItem.petId);
+        YG2.saves.slotsId.Remove(activeSlot.slotId);
+        
         activeSlot.SetItem(null);
         activeSlot.SetBusy(false);
         AddItem(petItem, true);
-        
+
         PetSpawner.Instance.DespawnPet(petItem);
+        
+        YG2.SaveProgress();
     }
-    
 }

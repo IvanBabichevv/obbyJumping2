@@ -39,8 +39,8 @@ public class ShopSlot : MonoBehaviour
         shopManager = manager;
 
         icon.sprite = item.Icon;
-        nameText.text = item.PetItem.PetName;
-        descriptiontext.text = item.Description;
+        nameText.text = item.PetItem.GetLocalizedName();
+        descriptiontext.text = item.GetLocalizedDescription();
         priceText.text = item.Price.ToString();
 
         buyButton.onClick.RemoveAllListeners();

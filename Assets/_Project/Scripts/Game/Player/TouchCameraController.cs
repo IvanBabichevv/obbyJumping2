@@ -55,7 +55,7 @@ namespace Player
             if (isPinching)
                 return;
 
-            //touchSensitivity = YG2.saves.mouseSensitivity / 25;
+            touchSensitivity = SettingsManager.Sensivity / 25;
 
             if (eventData.delta.magnitude > 0.5f)
             {

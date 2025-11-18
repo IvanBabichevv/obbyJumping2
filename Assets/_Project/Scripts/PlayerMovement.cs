@@ -32,7 +32,6 @@ public class PlayerMovement : MonoBehaviour
 
     private float stepCoolDown = 0.3f;
     private float nextStepTime = 0f;
-    float sens = SettingsManager.Sensivity;
 
     public int GetJumpPower() => (int)(jumpHeight * 200);
 
@@ -68,11 +67,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        jumpHeight = YG2.saves.jumpHeight;
+        
         if (animator == null)
             animator = GetComponentInChildren<Animator>();
 
         lastPosition = transform.position;
         startPosition = transform.position;
+        
+        PointsManager.Instance.ScoreChangedInvoke();
     }
 
     void Update()
@@ -89,8 +92,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (YG2.envir.isDesktop)
         {
-            horizontal = Input.GetAxisRaw("Horizontal") * sens;
-            vertical = Input.GetAxisRaw("Vertical") * sens;
+            horizontal = Input.GetAxisRaw("Horizontal");
+            vertical = Input.GetAxisRaw("Vertical");
         }
 
         Vector3 move = new Vector3(horizontal, 0, vertical);
@@ -169,6 +172,10 @@ public class PlayerMovement : MonoBehaviour
         //jumpHeight = Mathf.Clamp(jumpHeight, 0.001f, 50f);
         nextIncreaseCooldown = Time.time + IncreaseCooldown;
         PointsManager.Instance.ScoreChangedInvoke();
+        
+        YG2.saves.jumpHeight = jumpHeight;
+        
+        YG2.SaveProgress();
     }
 
     public void ForceStop(bool value)

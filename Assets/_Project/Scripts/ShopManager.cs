@@ -42,7 +42,6 @@ public class ShopManager : MonoBehaviour
         if (PointsManager.Instance.HasEnoughPoints(item.Price))
         {
             PointsManager.Instance.SpendPoints(item.Price);
-            Debug.Log($"Куплен предмет: {item.ItemName}. Осталось очков: {PointsManager.Instance.VictoryPoints}");
             OnItemBought?.Invoke(item.PetItem, true);
         }
         else

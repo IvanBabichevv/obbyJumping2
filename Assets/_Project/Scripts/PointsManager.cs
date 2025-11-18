@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using YG;
 
 public class PointsManager : MonoBehaviour
 {
@@ -40,6 +41,8 @@ public class PointsManager : MonoBehaviour
 
     private void Start()
     {
+        victoryPoints = YG2.saves.cupsCount;
+        
         victoryScoreBaseText = VictoryPointsCounterText.text;
         scoreBaseText = scoreText.text;
         UpdateUI();
@@ -48,7 +51,12 @@ public class PointsManager : MonoBehaviour
     public void AddPoints(int mount)
     {
         victoryPoints += mount;
+        
+        YG2.saves.cupsCount = victoryPoints;
+        
         UpdateUI();
+        
+        YG2.SaveProgress();
     }
 
     public bool HasEnoughPoints(int mount)
@@ -60,7 +68,12 @@ public class PointsManager : MonoBehaviour
     {
         victoryPoints -= mount;
         if (victoryPoints < 0) victoryPoints = 0;
+        
+        YG2.saves.cupsCount = victoryPoints;
+        
         UpdateUI();
+        
+        YG2.SaveProgress();
     }
 
     public void ScoreChangedInvoke()

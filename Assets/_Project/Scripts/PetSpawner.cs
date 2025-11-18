@@ -40,7 +40,7 @@ public class PetSpawner : MonoBehaviour
         Vector3 spawnPos = player.position + randomOffset;
         
         GameObject pet = Instantiate(petItem.petPrefab, spawnPos, Quaternion.identity);
-        pet.name = $"{petItem.PetName}_Pet";
+        pet.name = $"{petItem.GetLocalizedName()}_Pet";
 
         var follow = pet.AddComponent<PetFollow>();
         follow.SetTarget(player, baseOffset);
@@ -48,19 +48,19 @@ public class PetSpawner : MonoBehaviour
         activePets.Add(pet);
         petIndex++;
         
-        Debug.Log($"🐾 Питомец {petItem.PetName} создан рядом с игроком");
+        Debug.Log($"🐾 Питомец {petItem.GetLocalizedName()} создан рядом с игроком");
     }
 
     public void DespawnPet(PetItem petItem)
     {
         if (petItem == null) return;
         
-        GameObject pet = activePets.Find(p => p.name.StartsWith(petItem.PetName));
+        GameObject pet = activePets.Find(p => p.name.StartsWith(petItem.GetLocalizedName()));
         if (pet != null)
         {
             Destroy(pet);
             activePets.Remove(pet);
-            Debug.Log($"🐾 Питомец {petItem.PetName} создан рядом с игроком");
+            Debug.Log($"🐾 Питомец {petItem.GetLocalizedName()} создан рядом с игроком");
         }
     }
     

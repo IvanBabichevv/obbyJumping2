@@ -15,7 +15,7 @@ public class InventorySlot : MonoBehaviour
     public void Setup(PetItem item)
     {
         currentItem = item;
-        itemName.text = item.PetName;
+        itemName.text = item.GetLocalizedName();
         coefficient.text = $"+{item.coefficient}";
         icon.sprite = item.Icon;
 

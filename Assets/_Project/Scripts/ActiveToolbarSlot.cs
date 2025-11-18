@@ -10,6 +10,8 @@ public class ActiveToolbarSlot : MonoBehaviour, IPointerClickHandler
 {
     public bool IsBusy => isBusy;
 
+    public int slotId;
+    
     [SerializeField] private Image icon;
     [SerializeField] private TMP_Text coeffText;
     [SerializeField] private GameObject coeff;
@@ -20,9 +22,9 @@ public class ActiveToolbarSlot : MonoBehaviour, IPointerClickHandler
 
     private void Start()
     {
-        icon.gameObject.SetActive(false);
+        /*icon.gameObject.SetActive(false);
         
-        coeff.SetActive(false);
+        coeff.SetActive(false);*/
     }
 
     public void SetItem(PetItem item)
@@ -30,9 +32,10 @@ public class ActiveToolbarSlot : MonoBehaviour, IPointerClickHandler
         if (item)
         {
             icon.gameObject.SetActive(true);
+            coeff.gameObject.SetActive(true);
+            
             currentItem = item;
             icon.sprite = currentItem.Icon;
-            coeff.gameObject.SetActive(true);
             coeffText.text = $"+{currentItem.coefficient}";
             
             PointsManager.Instance.IncreaseCoefficient(item.coefficient);
@@ -40,8 +43,10 @@ public class ActiveToolbarSlot : MonoBehaviour, IPointerClickHandler
         else
         {
             PointsManager.Instance.DecreaseCoefficient(currentItem.coefficient);
+            
             icon.gameObject.SetActive(false);
             coeff.gameObject.SetActive(false);
+            
             coeffText.text = "";
             currentItem = null;
         }
