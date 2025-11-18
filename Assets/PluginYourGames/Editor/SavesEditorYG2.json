@@ -1,0 +1,21 @@
+{
+    "intExample": 5,
+    "strExample": "Hello!",
+    "boolExample": [
+        false,
+        false,
+        false,
+        false
+    ],
+    "idSave": 4,
+    "cupsCount": 25,
+    "jumpHeight": 0.010999999940395356,
+    "itemInActiveSlotId": [],
+    "itemInInventorySlotId": [
+        1
+    ],
+    "slotsId": [],
+    "musicVolume": 0.5,
+    "fxVolume": 0.699999988079071,
+    "cameraSensitivity": 5.0
+}
