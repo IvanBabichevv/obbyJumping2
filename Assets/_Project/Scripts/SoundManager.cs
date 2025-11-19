@@ -13,6 +13,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip footStep;
     [SerializeField] private AudioClip Victory;
     [SerializeField] private AudioClip backgroundMusicGame;
+    [SerializeField] private AudioClip buyItem;
     
     
     private void Awake()
@@ -47,6 +48,7 @@ public class SoundManager : MonoBehaviour
     public void PlayButtonClick() => PlayFX(buttonClick);
     public void PlayFootStep() => PlayFX(footStep);
     public void PlayVictory() => PlayFX(Victory);
+    public void PlayBuyItem() => PlayFX(buyItem);
 
     public float MusicVolume
     {

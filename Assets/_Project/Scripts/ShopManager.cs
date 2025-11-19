@@ -43,6 +43,7 @@ public class ShopManager : MonoBehaviour
         {
             PointsManager.Instance.SpendPoints(item.Price);
             OnItemBought?.Invoke(item.PetItem, true);
+            SoundManager.instance.PlayBuyItem();
         }
         else
         {

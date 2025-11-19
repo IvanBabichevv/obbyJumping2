@@ -48,6 +48,16 @@ public class PlayerMovement : MonoBehaviour
     float horizontal;
     float vertical;
 
+    // *** Jump logic ***
+    private float jumpStartY;
+    private bool isJumping;
+    private bool stopJumpAllowed;
+
+    [Header("High Jump Settings")]
+    public float characterHeight = 2f;                // высота персонажа
+    public float highJumpThresholdMultiplier = 2.5f;  // высота (2-3 метра)
+    public Button stopJumpButton;                     // кнопка сброса прыжка
+
     private void OnEnable()
     {
         TouchMovementController.movementController = this;
@@ -58,6 +68,9 @@ public class PlayerMovement : MonoBehaviour
     {
         TouchMovementController.movementController = null;
         TouchMovementController.OnJumpButtonDown.RemoveListener(Jump);
+
+        if (stopJumpButton != null)
+            stopJumpButton.onClick.RemoveListener(StopJump);
     }
 
     private void Awake()
@@ -68,19 +81,25 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         jumpHeight = YG2.saves.jumpHeight;
-        
+
         if (animator == null)
             animator = GetComponentInChildren<Animator>();
 
         lastPosition = transform.position;
         startPosition = transform.position;
-        
+
         PointsManager.Instance.ScoreChangedInvoke();
+
+        // Кнопка изначально скрыта
+        if (stopJumpButton != null)
+        {
+            stopJumpButton.gameObject.SetActive(false);
+            stopJumpButton.onClick.AddListener(StopJump);
+        }
     }
 
     void Update()
     {
-        //isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         isGrounded = conroller.isGrounded;
 
         if (transform.position.y < -2)
@@ -104,8 +123,8 @@ public class PlayerMovement : MonoBehaviour
         if (move.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(move.x, move.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity,
-                turnSmoothTime);
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle,
+                ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
@@ -117,14 +136,23 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
 
+        // потолок
         if (Physics.Raycast(transform.position, Vector3.up, out RaycastHit hit, floorDistance, floorMask))
         {
             velocity.y = -10f;
         }
 
+        // приземление
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
+
+            if (isJumping)
+            {
+                isJumping = false;
+                stopJumpAllowed = false;
+                HideStopButton();
+            }
         }
         else
         {
@@ -135,7 +163,6 @@ public class PlayerMovement : MonoBehaviour
 
         float distance = Vector3.Distance(transform.position, lastPosition);
         bool isMoving = distance > moveMinimum;
-
 
         if (animator != null)
         {
@@ -150,12 +177,57 @@ public class PlayerMovement : MonoBehaviour
         }
 
         lastPosition = transform.position;
+
+        // Высокий прыжок = появление кнопки
+        if (isJumping)
+        {
+            float heightNow = transform.position.y - jumpStartY;
+
+            if (!stopJumpAllowed && heightNow >= characterHeight * highJumpThresholdMultiplier)
+            {
+                stopJumpAllowed = true;
+                ShowStopButton();
+            }
+
+            if (stopJumpAllowed && Input.GetKeyDown(KeyCode.Space))
+            {
+                StopJump();
+            }
+        }
     }
 
     private void Jump()
     {
         if (isGrounded)
+        {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+
+            jumpStartY = transform.position.y;
+            isJumping = true;
+            stopJumpAllowed = false;
+
+            HideStopButton(); // кнопка скрыта в начале прыжка
+        }
+    }
+
+    public void StopJump()
+    {
+        velocity.y = Mathf.Min(velocity.y, 0f); // убираем ускорение вверх
+
+        stopJumpAllowed = false;
+        HideStopButton();
+    }
+
+    private void ShowStopButton()
+    {
+        if (stopJumpButton != null)
+            stopJumpButton.gameObject.SetActive(true);
+    }
+
+    private void HideStopButton()
+    {
+        if (stopJumpButton != null)
+            stopJumpButton.gameObject.SetActive(false);
     }
 
     public void SetAxis(Vector3 direction)
@@ -166,15 +238,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void IncreaseJumpPower()
     {
-        //jumpHeight += 0.005f * PointsManager.Instance.CurrentCoefficient;
         jumpHeight += oneClick * PointsManager.Instance.CurrentCoefficient;
-        //print(0.005f * PointsManager.Instance.CurrentCoefficient);
-        //jumpHeight = Mathf.Clamp(jumpHeight, 0.001f, 50f);
         nextIncreaseCooldown = Time.time + IncreaseCooldown;
         PointsManager.Instance.ScoreChangedInvoke();
-        
+
         YG2.saves.jumpHeight = jumpHeight;
-        
         YG2.SaveProgress();
     }
 
