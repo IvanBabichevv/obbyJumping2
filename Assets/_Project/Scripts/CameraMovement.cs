@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Player;
@@ -24,6 +25,11 @@ public class CameraMovement : MonoBehaviour
         TouchCameraController.CameraController = null;
     }
 
+    void Start()
+    {
+        SetAxis(0, -1.5f);
+    }
+    
     void LateUpdate()
     {
         if (YG2.envir.isDesktop)

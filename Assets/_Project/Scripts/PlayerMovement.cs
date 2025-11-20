@@ -228,7 +228,7 @@ public class PlayerMovement : MonoBehaviour
             stopJumpButton.gameObject.SetActive(true);
     }
 
-    private void HideStopButton()
+    public void HideStopButton()
     {
         if (stopJumpButton != null)
             stopJumpButton.gameObject.SetActive(false);

@@ -7,15 +7,12 @@
         false,
         false
     ],
-    "idSave": 1582,
-    "cupsCount": 150,
-    "jumpHeight": 155.85574340820313,
+    "idSave": 3,
+    "cupsCount": 50,
+    "jumpHeight": 0.010999999940395356,
+    "removeAd": true,
     "itemInActiveSlotId": [],
-    "itemInInventorySlotId": [
-        1,
-        1,
-        1
-    ],
+    "itemInInventorySlotId": [],
     "slotsId": [],
     "musicVolume": 0.5,
     "fxVolume": 0.699999988079071,
