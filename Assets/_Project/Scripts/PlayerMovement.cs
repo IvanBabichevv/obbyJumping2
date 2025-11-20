@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float floorDistance = 1.5f;
     [SerializeField] private float IncreaseCooldown = 0.1f;
 
-    [SerializeField] private float oneClick = 1 / 200f;
+    [SerializeField] public float oneClick = 1 / 200f;
 
     private Animator animator;
 
@@ -53,10 +53,9 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping;
     private bool stopJumpAllowed;
 
-    [Header("High Jump Settings")]
-    public float characterHeight = 2f;                // высота персонажа
-    public float highJumpThresholdMultiplier = 2.5f;  // высота (2-3 метра)
-    public Button stopJumpButton;                     // кнопка сброса прыжка
+    [Header("High Jump Settings")] public float characterHeight = 2f; // высота персонажа
+    public float highJumpThresholdMultiplier = 2.5f; // высота (2-3 метра)
+    public Button stopJumpButton; // кнопка сброса прыжка
 
     private void OnEnable()
     {
@@ -136,7 +135,6 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
 
-        // потолок
         if (Physics.Raycast(transform.position, Vector3.up, out RaycastHit hit, floorDistance, floorMask))
         {
             velocity.y = -10f;
@@ -185,8 +183,11 @@ public class PlayerMovement : MonoBehaviour
 
             if (!stopJumpAllowed && heightNow >= characterHeight * highJumpThresholdMultiplier)
             {
-                stopJumpAllowed = true;
-                ShowStopButton();
+                if (velocity.y > 0)
+                {
+                    stopJumpAllowed = true;
+                    ShowStopButton();
+                }
             }
 
             if (stopJumpAllowed && Input.GetKeyDown(KeyCode.Space))
@@ -212,10 +213,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void StopJump()
     {
-        velocity.y = Mathf.Min(velocity.y, 0f); // убираем ускорение вверх
+        if (stopJumpAllowed)
+        {
+            velocity.y = -15f; // убираем ускорение вверх
 
-        stopJumpAllowed = false;
-        HideStopButton();
+            stopJumpAllowed = false;
+            HideStopButton();
+        }
     }
 
     private void ShowStopButton()

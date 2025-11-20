@@ -71,6 +71,8 @@ namespace Player
         {
             PlayerMovement.Instance.IncreaseJumpPower();
             SoundManager.instance.PlayButtonClick();
+            FloatingTextSpawner.Instance.SpawnText();
+            SoundManager.instance.PlayButtonClick();
         }
     }
 }
