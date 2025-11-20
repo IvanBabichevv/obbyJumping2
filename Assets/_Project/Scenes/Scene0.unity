@@ -8505,9 +8505,9 @@ MonoBehaviour:
       de: 
       hi: 
   text: 
-  ru: "\u0418\u043B\u0438 \u043D\u0430\u0436\u043C\u0438\u0442\u0435 \"\u041F\u0440\u043E\u0431\u0435\u043B\""
-  en: Or press Space
-  tr: "Veya Space tu\u015Funa bas\u0131n"
+  ru: "\u0418\u043B\u0438 \u043D\u0430\u0436\u043C\u0438\u0442\u0435 \"\u041F\u0440\u043E\u0431\u0435\u043B\"."
+  en: Or press Space.
+  tr: "Veya Space tu\u015Funa bas\u0131n."
   az: 
   be: 
   he: 
@@ -8560,7 +8560,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0418\u043B\u0438 \u043D\u0430\u0436\u043C\u0438\u0442\u0435 \"\u041F\u0440\u043E\u0431\u0435\u043B\""
+  m_text: "\u0418\u043B\u0438 \u043D\u0430\u0436\u043C\u0438\u0442\u0435 \"\u041F\u0440\u043E\u0431\u0435\u043B\"."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: b246c4190f4e46ec9352fe15a7b09ce0, type: 2}
@@ -8587,7 +8587,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37.8
+  m_fontSize: 36.75
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
