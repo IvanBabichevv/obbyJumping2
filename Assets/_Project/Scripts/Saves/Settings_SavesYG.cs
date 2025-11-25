@@ -5,5 +5,7 @@ namespace YG
         public float musicVolume = 0.5f;
         public float fxVolume = 0.7f;
         public float cameraSensitivity = 5f;
+        
+        public bool newPlayerSend = false;
     }
 }

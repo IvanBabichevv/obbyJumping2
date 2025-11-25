@@ -9,12 +9,13 @@
     ],
     "idSave": 1,
     "cupsCount": 50,
-    "jumpHeight": 0.006000000052154064,
+    "jumpHeight": 0.0010000000474974514,
     "removeAd": false,
     "itemInActiveSlotId": [],
     "itemInInventorySlotId": [],
     "slotsId": [],
     "musicVolume": 0.5,
     "fxVolume": 0.699999988079071,
-    "cameraSensitivity": 5.0
+    "cameraSensitivity": 5.0,
+    "newPlayerSend": true
 }

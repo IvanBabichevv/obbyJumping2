@@ -5785,6 +5785,50 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &183896916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 183896918}
+  - component: {fileID: 183896917}
+  m_Layer: 0
+  m_Name: NewPlayerMetrica
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &183896917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183896916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25387a51ef0e7404f8b58fe67619f989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &183896918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183896916}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &184003569 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1309095466835327010, guid: 9d80503f1673399419b149f9ca132a2c, type: 3}
@@ -29662,6 +29706,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3976054783233784513, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
+      propertyPath: towerId
+      value: farm_tower_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976054783233784513, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
       propertyPath: VictoryPoints
       value: 150
       objectReference: {fileID: 0}
@@ -45586,6 +45634,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3976054783233784513, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
+      propertyPath: towerId
+      value: farm_tower_3
+      objectReference: {fileID: 0}
     - target: {fileID: 3976054783233784513, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
       propertyPath: VictoryPoints
       value: 250
@@ -71354,6 +71406,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3976054783233784513, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
+      propertyPath: towerId
+      value: farm_tower_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976054783233784513, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
       propertyPath: VictoryPoints
       value: 25
       objectReference: {fileID: 0}
@@ -75570,3 +75626,4 @@ SceneRoots:
   - {fileID: 1196705685}
   - {fileID: 1382237843}
   - {fileID: 640357121}
+  - {fileID: 183896918}

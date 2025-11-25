@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using YG;
 
 public class CrownPointTrigger : MonoBehaviour
 {
     public int VictoryPoints = 1;
     [SerializeField] private Vector3 telepotPosition;
+    [SerializeField] private string towerId;
 
     private Collider lastPlayer;
     
@@ -18,7 +20,8 @@ public class CrownPointTrigger : MonoBehaviour
         {
            lastPlayer =  other;
             
-            UiVictoryWindow.instance.Show(VictoryPoints, this);            
+            UiVictoryWindow.instance.Show(VictoryPoints, this); 
+            YG2.MetricaSend(towerId);
         }
     }
 

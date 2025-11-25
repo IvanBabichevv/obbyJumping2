@@ -143,6 +143,11 @@ MonoBehaviour:
     labelAdvSimLabel: 0
   Localization:
     setLanguageMod: 1
+  Metrica:
+    enable: 1
+    metricaCounterID: 105508887
+    log: 1
+    useYandexMetrica: 1
   Payments:
     durationPayPanel: 1
     testBuyFail: 0
@@ -220,6 +225,8 @@ MonoBehaviour:
     interAdvInterval: 0
     postponeCallByFail: 0
     setLanguageMod: 0
+    useYandexMetrica: 0
+    metricaCounterID: 0
     skipInterAdvAfterReward: 0
     saveLocal: 0
     saveCloud: 0

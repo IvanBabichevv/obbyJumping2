@@ -1,3 +1,3 @@
 ﻿Build path: /Users/ivanbabichev/Documents/Game Builds/ObbyJumper/WebGL/ObbyJump
-Build number: 5
+Build number: 6
 PluginYG version: 2.007

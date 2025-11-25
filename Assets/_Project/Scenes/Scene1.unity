@@ -4053,12 +4053,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3976054783233784513, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
+      propertyPath: towerId
+      value: city_tower_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976054783233784513, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
       propertyPath: VictoryPoints
       value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976054783233784513, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
+      propertyPath: telepotPosition.x
+      value: 17.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976054783233784513, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
+      propertyPath: telepotPosition.y
+      value: 2.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976054783233784513, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
+      propertyPath: telepotPosition.z
+      value: -50.44
       objectReference: {fileID: 0}
     - target: {fileID: 4961232787187185727, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961232787187185727, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4961232787187185727, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
       propertyPath: m_LocalScale.z
@@ -46037,12 +46057,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3976054783233784513, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
+      propertyPath: towerId
+      value: city_tower_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976054783233784513, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
       propertyPath: VictoryPoints
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976054783233784513, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
+      propertyPath: telepotPosition.x
+      value: 17.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976054783233784513, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
+      propertyPath: telepotPosition.y
+      value: 2.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976054783233784513, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
+      propertyPath: telepotPosition.z
+      value: -50.44
       objectReference: {fileID: 0}
     - target: {fileID: 4961232787187185727, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961232787187185727, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4961232787187185727, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
       propertyPath: m_LocalScale.z
@@ -51644,12 +51684,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3976054783233784513, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
+      propertyPath: towerId
+      value: city_tower_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976054783233784513, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
       propertyPath: VictoryPoints
       value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976054783233784513, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
+      propertyPath: telepotPosition.x
+      value: 17.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976054783233784513, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
+      propertyPath: telepotPosition.y
+      value: 2.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976054783233784513, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
+      propertyPath: telepotPosition.z
+      value: -50.44
       objectReference: {fileID: 0}
     - target: {fileID: 4961232787187185727, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
       propertyPath: m_LocalScale.x
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961232787187185727, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4961232787187185727, guid: 28dc6db1a36a6124d945f3ef27a9347e, type: 3}
       propertyPath: m_LocalScale.z
