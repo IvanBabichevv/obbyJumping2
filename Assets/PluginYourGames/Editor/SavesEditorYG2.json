@@ -7,18 +7,20 @@
         false,
         false
     ],
-    "idSave": 1758,
-    "cupsCount": 0,
-    "jumpHeight": 336.7621154785156,
+    "idSave": 1655,
+    "cupsCount": 80,
+    "jumpHeight": 555.3113403320313,
     "removeAd": true,
     "itemInActiveSlotId": [
-        7,
-        3,
         1,
-        1
+        1,
+        11,
+        10
     ],
     "itemInInventorySlotId": [
-        2
+        0,
+        3,
+        3
     ],
     "slotsId": [
         0,
@@ -26,7 +28,7 @@
         2,
         3
     ],
-    "musicVolume": 0.14086957275867463,
-    "fxVolume": 0.37196698784828188,
+    "musicVolume": 0.5,
+    "fxVolume": 0.699999988079071,
     "cameraSensitivity": 5.0
 }

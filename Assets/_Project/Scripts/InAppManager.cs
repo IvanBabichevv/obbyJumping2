@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using YG;
 
 public class InAppManager : MonoBehaviour
 {
+    public static event Action OnPurchaseSuccess;
+    
     public static InAppManager Instance {get; private set;}
 
     private void Awake()
@@ -39,6 +42,10 @@ public class InAppManager : MonoBehaviour
             YG2.saves.removeAd = true;
             AdManager.Instance?.BannerOff();
         }
+        
+        YG2.SaveProgress();
+        
+        OnPurchaseSuccess?.Invoke();
     }
 
     private void FailedPurchased(string id)

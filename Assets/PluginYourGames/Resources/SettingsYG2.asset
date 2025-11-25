@@ -147,31 +147,13 @@ MonoBehaviour:
     durationPayPanel: 1
     testBuyFail: 0
     purshases:
-    - id: gun
-      title: Gun
+    - id: AdRemove
+      title: "\u041D\u0435\u0442 \u0440\u0435\u043A\u043B\u0430\u043C\u044B"
       description: Product - Gun
       imageURI: demo image
-      price: 5 YAN
+      price: "5 \u0420\u0423\u0411"
       priceValue: 5
-      priceCurrencyCode: YAN
-      currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
-      consumed: 1
-    - id: armor
-      title: Armor
-      description: Product - Armor
-      imageURI: demo image
-      price: 10 YAN
-      priceValue: 10
-      priceCurrencyCode: YAN
-      currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
-      consumed: 1
-    - id: grenade
-      title: Grenade
-      description: Product - Grenade
-      imageURI: demo image
-      price: 30 YAN
-      priceValue: 30
-      priceCurrencyCode: YAN
+      priceCurrencyCode: "\u0420\u0423\u0411"
       currencyImageURL: https://yastatic.net/s3/games-static/static-data/images/payments/sdk/currency-icon-s@2x.png
       consumed: 1
   RewardedAdv:
