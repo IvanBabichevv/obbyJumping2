@@ -56788,7 +56788,6 @@ GameObject:
   - component: {fileID: 1619124442}
   - component: {fileID: 1619124443}
   - component: {fileID: 1619124444}
-  - component: {fileID: 1619124445}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -56966,21 +56965,6 @@ MonoBehaviour:
   x2Button: {fileID: 1658067920}
   okButton: {fileID: 718056913}
   onGetX2: {fileID: 1658067922}
---- !u!114 &1619124445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619124435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3f5dc19930b647049c6f29bf0a88181, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeInterval: 10
-  adPanel: {fileID: 610949715}
-  adText: {fileID: 963717354}
 --- !u!1001 &1621559473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75413,7 +75397,7 @@ PrefabInstance:
       objectReference: {fileID: 403016107}
     - target: {fileID: 2219988160866239069, guid: 1e83bfc2303dd4d249cadb237a73e184, type: 3}
       propertyPath: m_VersionIndex
-      value: 402
+      value: 405
       objectReference: {fileID: 0}
     - target: {fileID: 2543941502389203002, guid: 1e83bfc2303dd4d249cadb237a73e184, type: 3}
       propertyPath: m_Mesh
@@ -75421,7 +75405,7 @@ PrefabInstance:
       objectReference: {fileID: 990924037}
     - target: {fileID: 2543941502389203002, guid: 1e83bfc2303dd4d249cadb237a73e184, type: 3}
       propertyPath: m_VersionIndex
-      value: 330
+      value: 333
       objectReference: {fileID: 0}
     - target: {fileID: 2565125747378364723, guid: 1e83bfc2303dd4d249cadb237a73e184, type: 3}
       propertyPath: m_LocalPosition.x
@@ -75469,7 +75453,7 @@ PrefabInstance:
       objectReference: {fileID: 1804767908}
     - target: {fileID: 2994960968736250156, guid: 1e83bfc2303dd4d249cadb237a73e184, type: 3}
       propertyPath: m_VersionIndex
-      value: 330
+      value: 333
       objectReference: {fileID: 0}
     - target: {fileID: 3810449731217782298, guid: 1e83bfc2303dd4d249cadb237a73e184, type: 3}
       propertyPath: m_Mesh
@@ -75485,7 +75469,7 @@ PrefabInstance:
       objectReference: {fileID: 1371034558}
     - target: {fileID: 4510324892539103799, guid: 1e83bfc2303dd4d249cadb237a73e184, type: 3}
       propertyPath: m_VersionIndex
-      value: 567
+      value: 570
       objectReference: {fileID: 0}
     - target: {fileID: 8385358538445059672, guid: 1e83bfc2303dd4d249cadb237a73e184, type: 3}
       propertyPath: sceneId

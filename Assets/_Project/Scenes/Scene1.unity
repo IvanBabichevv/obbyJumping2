@@ -8854,6 +8854,22 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1082398004}
+    - target: {fileID: 683584081026238634, guid: 1e83bfc2303dd4d249cadb237a73e184, type: 3}
+      propertyPath: en
+      value: FARM
+      objectReference: {fileID: 0}
+    - target: {fileID: 683584081026238634, guid: 1e83bfc2303dd4d249cadb237a73e184, type: 3}
+      propertyPath: ru
+      value: "\u0424\u0415\u0420\u041C\u0410"
+      objectReference: {fileID: 0}
+    - target: {fileID: 683584081026238634, guid: 1e83bfc2303dd4d249cadb237a73e184, type: 3}
+      propertyPath: tr
+      value: "\xC7\u0130FTL\u0130K"
+      objectReference: {fileID: 0}
+    - target: {fileID: 683584081026238634, guid: 1e83bfc2303dd4d249cadb237a73e184, type: 3}
+      propertyPath: processTranslateLabel
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1156478436050304014, guid: 1e83bfc2303dd4d249cadb237a73e184, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -8937,6 +8953,14 @@ PrefabInstance:
     - target: {fileID: 4510324892539103799, guid: 1e83bfc2303dd4d249cadb237a73e184, type: 3}
       propertyPath: m_VersionIndex
       value: 567
+      objectReference: {fileID: 0}
+    - target: {fileID: 7602757411307327870, guid: 1e83bfc2303dd4d249cadb237a73e184, type: 3}
+      propertyPath: m_text
+      value: "\u0424\u0415\u0420\u041C\u0410"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7602757411307327870, guid: 1e83bfc2303dd4d249cadb237a73e184, type: 3}
+      propertyPath: m_fontSize
+      value: 69.95
       objectReference: {fileID: 0}
     - target: {fileID: 8385358538445059672, guid: 1e83bfc2303dd4d249cadb237a73e184, type: 3}
       propertyPath: sceneId
@@ -46090,7 +46114,6 @@ GameObject:
   - component: {fileID: 1469365850}
   - component: {fileID: 1469365849}
   - component: {fileID: 1469365848}
-  - component: {fileID: 1469365847}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -46098,21 +46121,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1469365847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469365846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3f5dc19930b647049c6f29bf0a88181, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeInterval: 10
-  adPanel: {fileID: 755241243}
-  adText: {fileID: 426658166}
 --- !u!114 &1469365848
 MonoBehaviour:
   m_ObjectHideFlags: 0
