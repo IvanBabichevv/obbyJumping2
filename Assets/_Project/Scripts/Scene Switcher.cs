@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using UI.MobileJoystick;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using YG;
 
 public class SceneSwitcher : MonoBehaviour
 {
@@ -11,7 +13,9 @@ public class SceneSwitcher : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Joystick.instance?.ResetJoystick();
             SceneManager.LoadScene(sceneId);
+            YG2.InterstitialAdvShow();
         }
     }
 }

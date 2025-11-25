@@ -7,9 +7,9 @@
         false,
         false
     ],
-    "idSave": 1,
+    "idSave": 25,
     "cupsCount": 50,
-    "jumpHeight": 0.0010000000474974514,
+    "jumpHeight": 0.1210000216960907,
     "removeAd": false,
     "itemInActiveSlotId": [],
     "itemInInventorySlotId": [],
