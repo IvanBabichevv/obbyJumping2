@@ -15,7 +15,7 @@ public class SceneSwitcher : MonoBehaviour
         {
             Joystick.instance?.ResetJoystick();
             SceneManager.LoadScene(sceneId);
-            YG2.InterstitialAdvShow();
+            AdManager.Instance.ShowAd();
         }
     }
 }
