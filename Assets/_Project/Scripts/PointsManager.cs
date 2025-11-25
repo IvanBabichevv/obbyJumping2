@@ -19,9 +19,6 @@ public class PointsManager : MonoBehaviour
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private int victoryPoints;
 
-    private string scoreBaseText;
-    private string victoryScoreBaseText;
-
     private float currentCoefficient = 1;
 
     private void OnEnable()
@@ -43,8 +40,6 @@ public class PointsManager : MonoBehaviour
     {
         victoryPoints = YG2.saves.cupsCount;
         
-        victoryScoreBaseText = VictoryPointsCounterText.text;
-        scoreBaseText = scoreText.text;
         UpdateUI();
     }
 
@@ -95,9 +90,9 @@ public class PointsManager : MonoBehaviour
     private void UpdateUI()
     {
         if (VictoryPointsCounterText != null)
-            VictoryPointsCounterText.text = victoryScoreBaseText + $" {victoryPoints}";
+            VictoryPointsCounterText.text = $"{victoryPoints}";
 
-        scoreText.text = scoreBaseText + player.GetJumpPower();
+        scoreText.text = player.GetJumpPower().ToString();
 
         OnVictoryPointsChanged?.Invoke();
     }
